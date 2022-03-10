@@ -1,0 +1,88 @@
+@font-face {
+    font-family: 'Graphik';
+
+    src: url('/plugins/global/fonts/graphik-fonts/Graphik-Semibold.ttf') format('truetype'),
+        url('/plugins/global/fonts/graphik-fonts/Graphik-Semibold.svg#/plugins/global/fonts/graphik-fonts/Graphik-Semibold') format('svg');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: 'Graphik';
+    src: url('/plugins/global/fonts/graphik-fonts/Graphik-MediumItalic.eot');
+    src: url('/plugins/global/fonts/graphik-fonts/Graphik-MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('/plugins/global/fonts/graphik-fonts/Graphik-MediumItalic.woff2') format('woff2'),
+        url('/plugins/global/fonts/graphik-fonts/Graphik-MediumItalic.woff') format('woff'),
+        url('/plugins/global/fonts/graphik-fonts/Graphik-MediumItalic.ttf') format('truetype'),
+        url('/plugins/global/fonts/graphik-fonts/Graphik-MediumItalic.svg#/plugins/global/fonts/graphik-fonts/Graphik-MediumItalic') format('svg');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: 'Graphik';
+    src: url('/plugins/global/fonts/graphik-fonts/Graphik-Regular.eot');
+    src: url('/plugins/global/fonts/graphik-fonts/Graphik-Regular.eot?#iefix') format('embedded-opentype'),
+        url('/plugins/global/fonts/graphik-fonts/Graphik-Regular.woff2') format('woff2'),
+        url('/plugins/global/fonts/graphik-fonts/Graphik-Regular.woff') format('woff'),
+        url('/plugins/global/fonts/graphik-fonts/Graphik-Regular.ttf') format('truetype'),
+        url('/plugins/global/fonts/graphik-fonts/Graphik-Regular.svg#/plugins/global/fonts/graphik-fonts/Graphik-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: 'Graphik';
+    src: url('/plugins/global/fonts/graphik-fonts/Graphik-Light.eot');
+    src: url('/plugins/global/fonts/graphik-fonts/Graphik-Light.eot?#iefix') format('embedded-opentype'),
+        url('/plugins/global/fonts/graphik-fonts/Graphik-Light.woff2') format('woff2'),
+        url('/plugins/global/fonts/graphik-fonts/Graphik-Light.woff') format('woff'),
+        url('/plugins/global/fonts/graphik-fonts/Graphik-Light.ttf') format('truetype'),
+        url('/plugins/global/fonts/graphik-fonts/Graphik-Light.svg#/plugins/global/fonts/graphik-fonts/Graphik-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: 'Graphik';
+    src: url('/plugins/global/fonts/graphik-fonts/Graphik-Medium.eot');
+    src: url('/plugins/global/fonts/graphik-fonts/Graphik-Medium.eot?#iefix') format('embedded-opentype'),
+        url('/plugins/global/fonts/graphik-fonts/Graphik-Medium.woff2') format('woff2'),
+        url('/plugins/global/fonts/graphik-fonts/Graphik-Medium.woff') format('woff'),
+        url('/plugins/global/fonts/graphik-fonts/Graphik-Medium.ttf') format('truetype'),
+        url('/plugins/global/fonts/graphik-fonts/Graphik-Medium.svg#/plugins/global/fonts/graphik-fonts/Graphik-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: 'Graphik';
+    src: url('/plugins/global/fonts/graphik-fonts/Graphik-RegularItalic.eot');
+    src: url('/plugins/global/fonts/graphik-fonts/Graphik-RegularItalic.eot?#iefix') format('embedded-opentype'),
+        url('/plugins/global/fonts/graphik-fonts/Graphik-RegularItalic.woff2') format('woff2'),
+        url('/plugins/global/fonts/graphik-fonts/Graphik-RegularItalic.woff') format('woff'),
+        url('/plugins/global/fonts/graphik-fonts/Graphik-RegularItalic.ttf') format('truetype'),
+        url('/plugins/global/fonts/graphik-fonts/Graphik-RegularItalic.svg#/plugins/global/fonts/graphik-fonts/Graphik-RegularItalic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: 'Graphik';
+    src: url('/plugins/global/fonts/graphik-fonts/Graphik-Bold.eot');
+    src: url('/plugins/global/fonts/graphik-fonts/Graphik-Bold.eot?#iefix') format('embedded-opentype'),
+        url('/plugins/global/fonts/graphik-fonts/Graphik-Bold.woff2') format('woff2'),
+        url('/plugins/global/fonts/graphik-fonts/Graphik-Bold.woff') format('woff'),
+        url('/plugins/global/fonts/graphik-fonts/Graphik-Bold.ttf') format('truetype'),
+        url('/plugins/global/fonts/graphik-fonts/Graphik-Bold.svg#/plugins/global/fonts/graphik-fonts/Graphik-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+  }
+  
