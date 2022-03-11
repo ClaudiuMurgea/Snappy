@@ -204,7 +204,7 @@
                         <h2 class="text-lg font-medium truncate mr-5">Weekly Best Sellers</h2>
                     </div>
                     <div class="mt-5">
-                        @foreach (array_slice($fakers, 0, 4) as $faker)
+                       {{-- @foreach (array_slice($fakers, 0, 4) as $faker)
                             <div class="intro-y">
                                 <div class="box px-4 py-4 mb-3 flex items-center zoom-in">
                                     <div class="w-10 h-10 flex-none image-fit rounded-md overflow-hidden">
@@ -217,7 +217,7 @@
                                     <div class="py-1 px-2 rounded-full text-xs bg-success text-white cursor-pointer font-medium">137 Sales</div>
                                 </div>
                             </div>
-                        @endforeach
+                        @endforeach--}}
                         <a href="" class="intro-y w-full block text-center rounded-md py-4 border border-dotted border-slate-400 dark:border-darkmode-300 text-slate-500">View More</a>
                     </div>
                 </div>
@@ -301,7 +301,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach (array_slice($fakers, 0, 4) as $faker)
+                                {{--@foreach (array_slice($fakers, 0, 4) as $faker)
                                     <tr class="intro-x">
                                         <td class="w-40">
                                             <div class="flex">
@@ -337,7 +337,7 @@
                                             </div>
                                         </td>
                                     </tr>
-                                @endforeach
+                                @endforeach--}}
                             </tbody>
                         </table>
                     </div>
@@ -401,7 +401,7 @@
                             <h2 class="text-lg font-medium truncate mr-5">Transactions</h2>
                         </div>
                         <div class="mt-5">
-                            @foreach (array_slice($fakers, 0, 5) as $faker)
+                            {{--@foreach (array_slice($fakers, 0, 5) as $faker)
                                 <div class="intro-x">
                                     <div class="box px-5 py-3 mb-3 flex items-center zoom-in">
                                         <div class="w-10 h-10 flex-none image-fit rounded-full overflow-hidden">
@@ -414,7 +414,7 @@
                                         <div class="{{ $faker['true_false'][0] ? 'text-success' : 'text-danger' }}">{{ $faker['true_false'][0] ? '+' : '-' }}${{ $faker['totals'][0] }}</div>
                                     </div>
                                 </div>
-                            @endforeach
+                            @endforeach--}}
                             <a href="" class="intro-x w-full block text-center rounded-md py-3 border border-dotted border-slate-400 dark:border-darkmode-300 text-slate-500">View More</a>
                         </div>
                     </div>
@@ -429,73 +429,18 @@
                             <div class="intro-x relative flex items-center mb-3">
                                 <div class="before:block before:absolute before:w-20 before:h-px before:bg-slate-200 before:dark:bg-darkmode-400 before:mt-5 before:ml-5">
                                     <div class="w-10 h-10 flex-none image-fit rounded-full overflow-hidden">
-                                        <img alt="Rubick Tailwind HTML Admin Template" src="{{ asset('dist/images/' . $fakers[9]['photos'][0]) }}">
+                                       {{-- <img alt="Rubick Tailwind HTML Admin Template" src="{{ asset('dist/images/' . $fakers[9]['photos'][0]) }}">--}}
                                     </div>
                                 </div>
                                 <div class="box px-5 py-3 ml-4 flex-1 zoom-in">
                                     <div class="flex items-center">
-                                        <div class="font-medium">{{ $fakers[9]['users'][0]['name'] }}</div>
+                                 {{--       <div class="font-medium">{{ $fakers[9]['users'][0]['name'] }}</div>--}}
                                         <div class="text-xs text-slate-500 ml-auto">07:00 PM</div>
                                     </div>
                                     <div class="text-slate-500 mt-1">Has joined the team</div>
                                 </div>
                             </div>
-                            <div class="intro-x relative flex items-center mb-3">
-                                <div class="before:block before:absolute before:w-20 before:h-px before:bg-slate-200 before:dark:bg-darkmode-400 before:mt-5 before:ml-5">
-                                    <div class="w-10 h-10 flex-none image-fit rounded-full overflow-hidden">
-                                        <img alt="Rubick Tailwind HTML Admin Template" src="{{ asset('dist/images/' . $fakers[8]['photos'][0]) }}">
-                                    </div>
-                                </div>
-                                <div class="box px-5 py-3 ml-4 flex-1 zoom-in">
-                                    <div class="flex items-center">
-                                        <div class="font-medium">{{ $fakers[8]['users'][0]['name'] }}</div>
-                                        <div class="text-xs text-slate-500 ml-auto">07:00 PM</div>
-                                    </div>
-                                    <div class="text-slate-500">
-                                        <div class="mt-1">Added 3 new photos</div>
-                                        <div class="flex mt-2">
-                                            <div class="tooltip w-8 h-8 image-fit mr-1 zoom-in" title="{{ $fakers[0]['products'][0]['name'] }}">
-                                                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-md border border-white" src="{{ asset('dist/images/' . $fakers[8]['images'][0]) }}">
-                                            </div>
-                                            <div class="tooltip w-8 h-8 image-fit mr-1 zoom-in" title="{{ $fakers[1]['products'][0]['name'] }}">
-                                                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-md border border-white" src="{{ asset('dist/images/' . $fakers[8]['images'][1]) }}">
-                                            </div>
-                                            <div class="tooltip w-8 h-8 image-fit mr-1 zoom-in" title="{{ $fakers[2]['products'][0]['name'] }}">
-                                                <img alt="Rubick Tailwind HTML Admin Template" class="rounded-md border border-white" src="{{ asset('dist/images/' . $fakers[8]['images'][2]) }}">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="intro-x text-slate-500 text-xs text-center my-4">12 November</div>
-                            <div class="intro-x relative flex items-center mb-3">
-                                <div class="before:block before:absolute before:w-20 before:h-px before:bg-slate-200 before:dark:bg-darkmode-400 before:mt-5 before:ml-5">
-                                    <div class="w-10 h-10 flex-none image-fit rounded-full overflow-hidden">
-                                        <img alt="Rubick Tailwind HTML Admin Template" src="{{ asset('dist/images/' . $fakers[7]['photos'][0]) }}">
-                                    </div>
-                                </div>
-                                <div class="box px-5 py-3 ml-4 flex-1 zoom-in">
-                                    <div class="flex items-center">
-                                        <div class="font-medium">{{ $fakers[7]['users'][0]['name'] }}</div>
-                                        <div class="text-xs text-slate-500 ml-auto">07:00 PM</div>
-                                    </div>
-                                    <div class="text-slate-500 mt-1">Has changed <a class="text-primary" href="">{{ $fakers[7]['products'][0]['name'] }}</a> price and description</div>
-                                </div>
-                            </div>
-                            <div class="intro-x relative flex items-center mb-3">
-                                <div class="before:block before:absolute before:w-20 before:h-px before:bg-slate-200 before:dark:bg-darkmode-400 before:mt-5 before:ml-5">
-                                    <div class="w-10 h-10 flex-none image-fit rounded-full overflow-hidden">
-                                        <img alt="Rubick Tailwind HTML Admin Template" src="{{ asset('dist/images/' . $fakers[6]['photos'][0]) }}">
-                                    </div>
-                                </div>
-                                <div class="box px-5 py-3 ml-4 flex-1 zoom-in">
-                                    <div class="flex items-center">
-                                        <div class="font-medium">{{ $fakers[6]['users'][0]['name'] }}</div>
-                                        <div class="text-xs text-slate-500 ml-auto">07:00 PM</div>
-                                    </div>
-                                    <div class="text-slate-500 mt-1">Has changed <a class="text-primary" href="">{{ $fakers[6]['products'][0]['name'] }}</a> description</div>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
                     <!-- END: Recent Activities -->

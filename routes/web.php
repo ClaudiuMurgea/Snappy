@@ -26,10 +26,10 @@ Route::middleware('loggedin')->group(function() {
     Route::get('register', [AuthController::class, 'registerView'])->name('register.index');
     Route::post('register', [AuthController::class, 'register'])->name('register.store');
 });
-
+Route::get('/', [PageController::class, 'dashboardOverview1'])->name('dashboard-overview-1');
 Route::middleware('auth')->group(function() {
     Route::get('logout', [AuthController::class, 'logout'])->name('logout');
-    Route::get('/', [PageController::class, 'dashboardOverview1'])->name('dashboard-overview-1');
+
     Route::get('dashboard-overview-2-page', [PageController::class, 'dashboardOverview2'])->name('dashboard-overview-2');
     Route::get('dashboard-overview-3-page', [PageController::class, 'dashboardOverview3'])->name('dashboard-overview-3');
     Route::get('inbox-page', [PageController::class, 'inbox'])->name('inbox');

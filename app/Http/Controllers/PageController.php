@@ -14,12 +14,12 @@ class PageController extends Controller
      */
     public function dashboardOverview1()
     {
-        return view('pages/dashboard-overview-1', [
+        return view('pages/dashboard-overview-3', [
             // Specify the base layout.
             // Eg: 'side-menu', 'simple-menu', 'top-menu', 'login'
             // The default value is 'side-menu'
 
-            // 'layout' => 'side-menu'
+            'layout' => 'top-menu'
         ]);
     }
 
@@ -42,7 +42,8 @@ class PageController extends Controller
      */
     public function dashboardOverview3()
     {
-        return view('pages/dashboard-overview-3');
+        $layout = 'top-menu';
+        return view('pages/dashboard-overview-1',compact('layout'));
     }
 
     /**
