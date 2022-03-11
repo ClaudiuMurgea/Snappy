@@ -9,5 +9,7 @@ use Spatie\MediaLibrary\InteractsWithMedia;
 
 class File extends Model implements HasMedia
 {
+
     use HasFactory, InteractsWithMedia;
+    
 }

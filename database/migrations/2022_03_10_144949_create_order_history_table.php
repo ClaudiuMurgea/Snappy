@@ -6,8 +6,8 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\DB;
-use Spatie\Permission\Models\Permission;
-use Spatie\Permission\Models\Role;
+// use Spatie\Permission\Models\Permission;
+// use Spatie\Permission\Models\Role;
 
 return new class extends Migration
 {
@@ -19,12 +19,14 @@ return new class extends Migration
     public function up()
     {
         Schema::create('order_histories', function (Blueprint $table) {
-            $table->id();
-                $table->unsignedBigInteger('order_id');
-                $table->dateTime('date');
-                $table->char('status_description')->nullable();
-                $table->char('details')->nullable();
+            $table->increments('id');
+            $table->integer('order_id')->unsigned()->nullable();
+            $table->dateTime('date')->nullable();
+            $table->char('status_description')->nullable();
+            $table->char('details')->nullable();
             $table->timestamps();
+            $table->foreign('order_id')->references('id')->on('orders');
+            $table->softDeletes();
         });
 
         $this->seedPermission();
@@ -55,7 +57,7 @@ return new class extends Migration
         public function  seedPermission(){
             $permissions = array(
                 [ 'name' =>'Add Orders', 'guard_name' =>'web'],
-    
+
             );
             // Role::find(1)->syncPermissions(Permission::all());
             // DB::table('permissions')->insert($permissions);

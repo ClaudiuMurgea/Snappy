@@ -5,17 +5,23 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\DarkModeController;
 use App\Http\Controllers\ColorSchemeController;
+use App\Http\Livewire\Product\ProductIndex;
+use App\Http\Livewire\Product\ProductCreate;
+use App\Http\Livewire\Product\ProductEdit;
+use App\Http\Livewire\Product\ProductUpdate;
+use App\Http\Livewire\Bitmoji\BitmojiIndex;
+use App\Http\Livewire\Bitmoji\BitmojiCreate;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+
+Route::get('/products', ProductIndex::class)->name('product.index');
+Route::get('/product/create', ProductCreate::class)->name('product.create');
+Route::get('/products/{id}/edit', ProductEdit::class)->name('product.edit');
+Route::patch('/products/{id}/update', ProductUpdate::class)->name('product.update');
+
+Route::get('/bitmojis', BitmojiIndex::class)->name('bitmoji.index');
+Route::get('/bitmoji/create', BitmojiCreate::class)->name('bitmoji.index');
+
+
 
 Route::get('dark-mode-switcher', [DarkModeController::class, 'switch'])->name('dark-mode-switcher');
 Route::get('color-scheme-switcher/{color_scheme}', [ColorSchemeController::class, 'switch'])->name('color-scheme-switcher');

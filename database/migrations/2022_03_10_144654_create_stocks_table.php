@@ -13,12 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('bitmojis', function (Blueprint $table) {
-            $table->id();
-            $table->char('name',100);
-            $table->char('template',255);
-            $table->softDeletes();
+        Schema::create('stocks', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('amount')->nullable();
+            $table->integer('product_id')->unsigned()->nullable();
             $table->timestamps();
+            $table->foreign('product_id')->references('id')->on('products');
         });
     }
 
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bitmojis');
+        Schema::dropIfExists('stocks');
     }
 };

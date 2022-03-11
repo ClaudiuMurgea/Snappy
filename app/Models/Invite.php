@@ -8,11 +8,19 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Invite extends Model
 {
+    
     use HasFactory, SoftDeletes;
 
     protected $fillable = ['event_id','first_name','last_name','email', 'redeemed'];
 
-    public function Event(){
-        return $this->belongsTo(Event::class,'event_id','id');
+    public function Event ()
+    {
+        return $this->belongsTo(Event::class, 'id', 'invite_id');
     }
+
+    public function EventDetail()
+    {
+        return $this->hasOne(EventDetail::class, 'id', 'event_details_id');
+    }
+
 }

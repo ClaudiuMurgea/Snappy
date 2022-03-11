@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('footer_links', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->timestamps();
         });
     }

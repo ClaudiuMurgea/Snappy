@@ -16,7 +16,8 @@ class ProductModifierOption extends Model
         return $this->belongsTo(ProductModifier::class,'product_modifier_id','id');
     }
 
-    public function Stock($product_id){
+    public function Stock($product_id)
+    {
         return $this->hasOne(StockOption::class,'product_modifier_option_id','id')->where('product_id',$product_id)->first();
     }
 }

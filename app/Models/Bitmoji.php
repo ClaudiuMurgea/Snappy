@@ -8,6 +8,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Bitmoji extends Model
 {
+
     use HasFactory, SoftDeletes;
+    
     protected $fillable = ['name','template'];
+    
 }

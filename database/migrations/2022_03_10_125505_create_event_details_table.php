@@ -13,21 +13,19 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('events', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('category_id')->nullable();
+        Schema::create('event_details', function (Blueprint $table) {
+            $table->increments('id');
             $table->char('name',150);
+            $table->char('slug',100);
             $table->text('description');
             $table->char('background',20)->nullable();
             $table->dateTime('start_date');
             $table->dateTime('end_date');
-            $table->char('slug',100);
             $table->boolean('has_bitmoji')->default(0);
             $table->boolean('hide_login_kit')->nullable();
             $table->boolean('has_invite')->default(1);
-            $table->text('allow_domains')->nullable();
+            $table->boolean('allow_domains')->nullable();
             $table->softDeletes();
-            $table->timestamps();
         });
     }
 
@@ -38,6 +36,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('events');
+        Schema::dropIfExists('event_details');
     }
 };

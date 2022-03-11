@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('password_securities', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->integer('user_id');
             $table->boolean('google2fa_enable')->default(false);
             $table->string('google2fa_secret')->nullable();

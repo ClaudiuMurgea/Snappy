@@ -16,13 +16,17 @@ return new class extends Migration
     public function up()
     {
         Schema::create('order_products', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedInteger('order_id');
-            $table->unsignedInteger('product_id');
-            $table->unsignedInteger('product_modifier_id')->nullable();
-            $table->unsignedInteger('product_modifier_option_id')->nullable();
-            $table->softDeletes();
+            $table->increments('id');
+            $table->integer('order_id')->unsigned()->nullable();
+            $table->integer('product_id')->unsigned()->nullable();
+            $table->integer('product_modifier_id')->unsigned()->nullable();
+            $table->integer('product_modifier_option_id')->unsigned()->nullable();
             $table->timestamps();
+            $table->foreign('order_id')->references('id')->on('orders');
+            $table->foreign('product_id')->references('id')->on('products');
+            $table->foreign('product_modifier_id')->references('id')->on('product_modifiers');
+            $table->foreign('product_modifier_option_id')->references('id')->on('product_modifier_options');
+            $table->softDeletes();
         });
 
         $orders = Order::all();

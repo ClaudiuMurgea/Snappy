@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('carriers', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->char('name',100);
             $table->char('code',50);
             $table->timestamps();

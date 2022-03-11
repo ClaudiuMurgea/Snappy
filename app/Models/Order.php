@@ -9,32 +9,49 @@ use App\Events\OrderCreated;
 
 class Order extends Model
 {
+
     use HasFactory, SoftDeletes;
 
-    protected $guarded = [] ;
+    protected $fillable = [
+        'product_id',
+        'product_modifier_id',
+        'product_modifier_option_id',
+        'carrier_id',
+        'order_details_id'
+    ] ;
     // to do: implement email on save
     /*protected $dispatchesEvents = [
         'created' => OrderCreated::class
     ];*/
 
-    public function Event(){
-        return $this->belongsTo(Event::class,'event_id','id');
+    public function Carrier ()
+    {
+        return $this->hasOne(Carrier::class, 'id', 'carrier_id');
     }
 
-    public function Products(){
-        return $this->hasMany(OrderProduct::class);
+    public function Event ()
+    {
+        return $this->hasOne(Event::class, 'id', 'event_id');
     }
 
-
-    public function Invite(){
-        return  $this->belongsTo(Invite::class,'invite_id','id');
+    public function Invite ()
+    {
+        return $this->hasOne(Invite::class, 'id', 'invite_id');
     }
 
-    public function Carrier(){
-        return $this->hasOne(Carrier::class,'id','carrier_id');
+    public function OrderDetail ()
+    {
+        return $this->hasOne(OrderDetail::class, 'id', 'order_details_id');
     }
 
-    public function History(){
-        return $this->hasMany(OrderHistory::class,'order_id','id')->orderBy('date','DESC');
-    }
+    // public function Product ()
+    // {
+    //     return $this->belongsTo(Product::class,'product_id','id');
+    // }
+
+    // public function TrashedProduct ()
+    // {
+    //     return $this->belongsTo(Product::class,'product_id','id')->withTrashed();
+    // }
+
 }

@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ProductModifierStock extends Model
 {
+
     use HasFactory;
+
 }

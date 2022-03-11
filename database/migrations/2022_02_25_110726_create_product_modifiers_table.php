@@ -14,11 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('product_modifiers', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->char('name');
             $table->text('description')->nullable();
-            $table->softDeletes();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

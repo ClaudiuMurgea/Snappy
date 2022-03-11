@@ -13,10 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('orders', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('invite_id')->nullable();
-            $table->unsignedBigInteger('event_id');
+        Schema::create('order_details', function (Blueprint $table) {
+            $table->increments('id');
             $table->char('email',100)->nullable();
             $table->char('first_name',100);
             $table->char('last_name',100);
@@ -27,17 +25,11 @@ return new class extends Migration
             $table->char('zip',20)->nullable();
             $table->char('country',255);
             $table->char('phone',20)->nullable();
-            $table->unsignedBigInteger('product_id')->nullable();
-            $table->unsignedBigInteger('product_modifier_id')->nullable();
-            $table->unsignedBigInteger('product_modifier_option_id')->nullable();
-            $table->unsignedBigInteger( 'carrier_id')->nullable();
-            $table->char('carrier')->nullable();
-            $table->char('tracking_number',40)->nullable();
             $table->char('snapchat_display_name',100)->nullable();
             $table->char('bitmoji_avatar',255)->nullable();
-            $table->char('snapchat_external_id',255)->nullable();            
-            $table->softDeletes();
+            $table->char('snapchat_external_id',255)->nullable();  
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -48,6 +40,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('orders');
+        Schema::dropIfExists('order_details');
     }
 };

@@ -13,9 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('product_modifier_stocks', function (Blueprint $table) {
-            $table->id();
+        Schema::create('bitmojis', function (Blueprint $table) {
+            $table->increments('id');
+            $table->char('name',100);
+            $table->char('template',255);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -26,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('product_modifier_stocks');
+        Schema::dropIfExists('bitmojis');
     }
 };

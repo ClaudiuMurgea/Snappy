@@ -73,6 +73,21 @@
                         </li>
                     @endif
                 @endforeach
+                <li>
+                    <a href="/bitmoji">
+                        <div class="side-menu__icon text-white pl-5 flex flex-row align-items-baseline hover:bg-blue-400 py-3 rounded-lg">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                                <span class="ml-3.5">Bitmojis</span>  
+                        </div>
+                    </a>
+
+                    <a href="/products">
+                        <div class="side-menu__icon text-white pl-5 flex align-items-baseline hover:bg-blue-400 py-3 rounded-lg">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity"><polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon></svg> 
+                                <span class="ml-3.5">Products</span>  
+                        </div>
+                    </a>
+                </li>
             </ul>
         </nav>
         <!-- END: Side Menu -->

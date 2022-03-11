@@ -8,11 +8,13 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class ProductModifier extends Model
 {
+    
     use HasFactory;
 
     protected $fillable = ['name','label'];
 
-    public function Options(){
+    public function Options ()
+    {
         return $this->hasMany(ProductModifierOption::class,'product_modifier_id','id')->orderBy('order');
     }
 

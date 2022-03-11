@@ -14,11 +14,13 @@ return new class extends Migration
     public function up()
     {
         Schema::create('faqs', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('event_id');
-            $table->unsignedInteger('order');
+            $table->increments('id');
+            $table->integer('event_id')->unsigned()->nullable();
+            $table->integer('order_id')->unsigned()->nullable();
             $table->char('title',255);
             $table->mediumText('body');
+            $table->foreign('event_id')->references('id')->on('events');
+            $table->foreign('order_id')->references('id')->on('orders');
             $table->timestamps();
         });
     }

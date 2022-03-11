@@ -7,14 +7,19 @@ use Illuminate\Database\Eloquent\Model;
 
 class StockOption extends Model
 {
+
     use HasFactory;
 
     protected $fillable = ['product_modifier_option_id','product_id','amount','sku'];
 
-    public function ModifierOption(){
+    public function ModifierOption ()
+    {
         return $this->belongsTo(ProductModifierOption::class,'product_modifier_option_id','id');
     }
-    public function Stock($product_id){
+
+    public function Stock ($product_id)
+    {
         return $this->hasOne(StockOption::class,'product_modifier_option_id','id')->where('product_id',$product_id)->first();
     }
+    
 }

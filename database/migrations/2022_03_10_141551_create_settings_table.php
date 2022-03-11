@@ -16,21 +16,17 @@ return new class extends Migration
     public function up()
     {
         Schema::create('settings', function (Blueprint $table) {
-            $table->id();
-            $table->mediumText('thank_you')->nullable();
-            $table->mediumText('email_template')->nullable();
-            $table->char('header_color',20)->nullable();
-            $table->char('footer_color',20)->nullable();
-            $table->unsignedBigInteger('event_id')->nullable();
-            $table->char('order_description')->nullable();
-            $table->char('page_title')->nullable();
-            $table->char('order_title')->nullable();
-            $table->char('from_name',50)->nullable();
+            $table->increments('id');
+            $table->integer('setting_details_id')->unsigned()->nullable();
+            $table->integer('setting_tracking_details_id')->unsigned()->nullable();
+            $table->integer('event_id')->unsigned()->nullable();
             $table->timestamps();
+            $table->foreign('setting_details_id')->references('id')->on('setting_details');
+            $table->foreign('setting_tracking_details_id')->references('id')->on('setting_tracking_details');
+            $table->foreign('event_id')->references('id')->on('events');
         });
 
         // $this->seedSetting();
-
         // Setting::query()->truncate();
         // $events = Event::all();
         //     foreach ($events as $event){

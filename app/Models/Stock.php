@@ -7,15 +7,19 @@ use Illuminate\Database\Eloquent\Model;
 
 class Stock extends Model
 {
+
     use HasFactory;
 
     protected $fillable = ['amount','product_id'];
 
-    public function StockOption(){
-        return $this->hasMany(StockOption::class,'product_modifier_id ','id');
+    // public function StockOptions ()
+    // {
+    //     return $this->hasMany(StockOption::class, 'id', 'product_modifier_id');
+    // }
+
+    public function Product ()
+    {
+        return $this->hasOne(Product::class, 'id', 'product_id');
     }
 
-    public function Product(){
-        return $this->belongsTo(Product::class,'product_id','id');
-    }
 }

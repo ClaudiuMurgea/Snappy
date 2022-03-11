@@ -7,8 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class State extends Model
 {
+
     use HasFactory;
-    public function cities(){
+
+    public function cities ()
+    {
         return $this->hasMany(City::class,'state_id');
     }
+    
 }

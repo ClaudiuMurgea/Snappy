@@ -14,12 +14,15 @@ return new class extends Migration
     public function up()
     {
         Schema::create('product_modifier_options', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('product_modifier_id');
-            $table->char('name',100);
+            $table->increments('id');
             $table->unsignedInteger('order')->default(0);
-            $table->softDeletes();
+            $table->char('name',100);
+            $table->integer('product_modifier_id')->unsigned();
+            $table->integer('bitmoji_id')->unsigned()->nullable();
             $table->timestamps();
+            $table->foreign('product_modifier_id')->references('id')->on('product_modifiers');
+            $table->foreign('bitmoji_id')->references('id')->on('bitmojis');
+            $table->softDeletes();
         });
     }
 
